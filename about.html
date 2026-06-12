@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | CART-PALACE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #faf9f8;
+            color: #1e1e2a;
+            line-height: 1.5;
+        }
+
+        /* header navigation (matching main site) */
+        .site-header {
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 18px 0;
+        }
+
+        .logo-area h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .logo-area span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #5c6b7a;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .main-menu ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .main-menu a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e4e;
+            transition: 0.2s ease;
+            font-size: 1rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .main-menu a:hover {
+            color: #8b5e3c;
+            border-bottom-color: #c9ae7c;
+        }
+
+        /* about page specific styles */
+        .about-hero {
+            background: linear-gradient(135deg, #f3ede7 0%, #fef7f0 100%);
+            border-radius: 2rem;
+            margin: 40px 0 48px;
+            padding: 56px 48px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2d3e50;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .about-hero .tagline {
+            font-size: 1.25rem;
+            color: #6b4c3a;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 64px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e4e;
+            margin-bottom: 20px;
+            border-left: 4px solid #c9ae7c;
+            padding-left: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #3a4c5c;
+            font-size: 1.05rem;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            height: 400px;
+        }
+
+        .values-section {
+            background: white;
+            border-radius: 2rem;
+            padding: 48px 40px;
+            margin-bottom: 56px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid #efe6dd;
+        }
+
+        .values-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #2d3e50;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 24px 16px;
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: #c9ae7c;
+            margin-bottom: 16px;
+        }
+
+        .value-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #2c3e4e;
+        }
+
+        .value-card p {
+            color: #5a6e7c;
+            font-size: 0.95rem;
+        }
+
+        .team-section {
+            margin-bottom: 60px;
+        }
+
+        .team-section h2 {
+            font-size: 2rem;
+            margin-bottom: 32px;
+            color: #2d3e50;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        .team-member {
+            text-align: center;
+            background: white;
+            border-radius: 1.5rem;
+            padding: 24px 16px;
+            transition: 0.2s;
+            border: 1px solid #f0eae3;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-member img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 16px;
+            border: 3px solid #c9ae7c;
+        }
+
+        .team-member h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e4e;
+        }
+
+        .team-member .role {
+            color: #a9855e;
+            font-size: 0.85rem;
+            margin: 8px 0;
+            font-weight: 500;
+        }
+
+        .team-member .bio {
+            font-size: 0.85rem;
+            color: #6a7c8a;
+            padding: 0 8px;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            transition: 0.2s;
+        }
+
+        .back-home:hover {
+            background: #8b5e3c;
+            transform: translateX(-4px);
+        }
+
+        footer {
+            background: #1e272e;
+            color: #cfdde6;
+            padding: 32px 0;
+            margin-top: 40px;
+            text-align: center;
+            border-radius: 2rem 2rem 0 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.2rem;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #ddcfbf;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 780px) {
+            .header-flex {
+                flex-direction: column;
+                gap: 14px;
+            }
+            .main-menu ul {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-hero {
+                padding: 36px 24px;
+            }
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            .values-section {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="site-header">
+    <div class="container header-flex">
+        <div class="logo-area">
+            <h1>CART-PALACE</h1>
+            <span>✨ curated essentials</span>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </nav>
+        <div>
+            <i class="fas fa-shopping-bag" style="font-size: 1.4rem; color:#3b5c6e;"></i>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Hero section -->
+    <div class="about-hero">
+        <h1>Where objects carry meaning</h1>
+        <div class="tagline">CART-PALACE was born from a quiet belief — that the things we surround ourselves with should feel honest, beautiful, and lasting.</div>
+    </div>
+
+    <!-- Main story grid -->
+    <div class="about-grid">
+        <div class="about-text">
+            <h2>Our story</h2>
+            <p>CART-PALACE began as a small studio apartment project in 2025, when our founder, Elara Chen, found herself searching for home goods that didn't scream for attention — but whispered stories of craftsmanship. Dissatisfied with mass-produced trends and disposable decor, she set out to partner with independent artisans, ceramicists, and textile weavers who put soul into every detail.</p>
+            <p>Today, we've grown into a curated destination for those who seek the mindful and the unique. Every item — from a hand-thrown stoneware mug to a naturally dyed linen cushion — is chosen for its texture, its durability, and the human hand behind it. We don't follow fast fashion cycles; we follow seasons, materials, and makers who respect both.</p>
+            <p>Our name, Lumina, means "light" — a reminder that well-made objects bring warmth and clarity into everyday life. We're proud to be a slow-commerce space where quality never takes a backseat.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&auto=format" alt="Artisan workspace with ceramics" loading="lazy">
+        </div>
+    </div>
+
+    <!-- Values section -->
+    <div class="values-section">
+        <h2>What guides us</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-hand-sparkles"></i>
+                <h3>Artisan First</h3>
+                <p>We work directly with small-batch makers, ensuring fair wages and authentic craftsmanship in every piece.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Conscious Materials</h3>
+                <p>From reclaimed woods to natural fibers, we prioritize materials that respect the planet and its resources.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-heart"></i>
+                <h3>Timeless over trendy</h3>
+                <p>We avoid disposable design — our collections are meant to be loved, used, and passed on for years.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-box-open"></i>
+                <h3>Thoughtful Packaging</h3>
+                <p>Minimal, plastic-free, and fully recyclable — because the unboxing should feel as good as the product.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team / Faces behind CART-PALACE (real images) -->
+    <div class="team-section">
+        <h2>✨ The faces behind CART-PALACE</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=160&auto=format" alt="Elara Chen portrait">
+                <h4>Elara Chen</h4>
+                <div class="role">Founder & Curator</div>
+                <div class="bio">Former textile designer, now on a mission to celebrate slow-made home essentials. Loves her morning pour-over and unglazed ceramics.</div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&auto=format" alt="Marcus Webb">
+                <h4>Marcus Webb</h4>
+                <div class="role">Sourcing Lead</div>
+                <div class="bio">Travels to rural workshops and finds hidden gems. Believes that the best designs come from honest materials and patience.</div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&auto=format" alt="Sofia Rivera">
+                <h4>Sofia Rivera</h4>
+                <div class="role">Creative Director</div>
+                <div class="bio">Shapes the visual identity and storytelling. Her home is a living gallery of handmade objects and wild botanicals.</div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=160&auto=format" alt="James Kim">
+                <h4>James Kim</h4>
+                <div class="role">Community & Care</div>
+                <div class="bio">Ensures every customer feels seen. Advocate for circular design and repairable goods.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- back to homepage link -->
+    <div style="text-align: center;">
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to CART-PALACE</a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+    </div>
+    <p style="font-size: 0.8rem;">&copy; 2025 CART-PALACE — where everyday objects tell stories.</p>
+</footer>
+
+</body>
+</html>
