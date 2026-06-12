@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | CART-PALACE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #faf9f8;
+            color: #1e1e2a;
+            line-height: 1.55;
+        }
+
+        /* header navigation (matching main site style) */
+        .site-header {
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 18px 0;
+        }
+
+        .logo-area h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .logo-area span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #5c6b7a;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .main-menu ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .main-menu a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e4e;
+            transition: 0.2s ease;
+            font-size: 1rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .main-menu a:hover {
+            color: #8b5e3c;
+            border-bottom-color: #c9ae7c;
+        }
+
+        /* disclaimer page specific styles */
+        .disclaimer-wrapper {
+            max-width: 980px;
+            margin: 48px auto 64px;
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.03);
+            border: 1px solid #efe6dd;
+            overflow: hidden;
+        }
+
+        .disclaimer-header {
+            background: linear-gradient(112deg, #f9f3e7 0%, #fff3e6 100%);
+            padding: 48px 48px 32px 48px;
+            text-align: center;
+            border-bottom: 1px solid #e8dfd5;
+        }
+
+        .disclaimer-header h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #2d3e50;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .disclaimer-header .last-updated {
+            color: #8b5e3c;
+            font-size: 0.85rem;
+            font-weight: 500;
+            background: rgba(201, 174, 124, 0.12);
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 40px;
+        }
+
+        .disclaimer-content {
+            padding: 48px 52px;
+        }
+
+        .disclaimer-section {
+            margin-bottom: 32px;
+        }
+
+        .disclaimer-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e4e;
+            margin-bottom: 16px;
+            border-left: 4px solid #c9ae7c;
+            padding-left: 16px;
+        }
+
+        .disclaimer-section p {
+            margin-bottom: 14px;
+            color: #3a4c5c;
+            font-size: 1rem;
+        }
+
+        .disclaimer-section ul {
+            margin: 12px 0 12px 28px;
+            color: #3a4c5c;
+        }
+
+        .disclaimer-section li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: #fef7e8;
+            border-left: 4px solid #c9ae7c;
+            padding: 20px 24px;
+            border-radius: 1rem;
+            margin: 28px 0;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            transition: 0.2s;
+        }
+
+        .back-home:hover {
+            background: #8b5e3c;
+            transform: translateX(-4px);
+        }
+
+        footer {
+            background: #1e272e;
+            color: #cfdde6;
+            padding: 32px 0;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 2rem 2rem 0 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.2rem;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #ddcfbf;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 780px) {
+            .header-flex {
+                flex-direction: column;
+                gap: 14px;
+            }
+            .main-menu ul {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .disclaimer-header {
+                padding: 32px 24px;
+            }
+            .disclaimer-header h1 {
+                font-size: 2rem;
+            }
+            .disclaimer-content {
+                padding: 32px 24px;
+            }
+            .disclaimer-section h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="site-header">
+    <div class="container header-flex">
+        <div class="logo-area">
+            <h1>CART-PALACE</h1>
+            <span>✨ curated essentials</span>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="disclaimer.html">Disclaimer</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </nav>
+        <div>
+            <i class="fas fa-shopping-bag" style="font-size: 1.4rem; color:#3b5c6e;"></i>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="disclaimer-wrapper">
+        <div class="disclaimer-header">
+            <h1>Disclaimer</h1>
+            <div class="last-updated"><i class="far fa-calendar-alt"></i> Last Updated: June 5, 2026</div>
+        </div>
+        <div class="disclaimer-content">
+            <div class="disclaimer-section">
+                <h2>General Information</h2>
+                <p>The information provided by CART-PALACE ("we," "us," or "our") on this website (www.CART-PALACE.com) and any related subdomains is for general informational and educational purposes only. All content, including product descriptions, blog posts, and visual media, is presented in good faith. However, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of any information, products, services, or related graphics contained on the website.</p>
+                <p>Any reliance you place on such information is strictly at your own risk. CART-PALACE shall not be held liable for any loss or damage, including but not limited to indirect or consequential loss, arising from the use of, or reliance on, the information presented on this website.</p>
+            </div>
+
+            <div class="disclaimer-section">
+                <h2>Product Imagery & Artisanal Variations</h2>
+                <p>We take great pride in the craftsmanship behind every item we offer. Because many of our products are handcrafted — including ceramics, textiles, and wooden pieces — slight variations in color, grain, texture, shape, and size are natural and celebrated. These unique characteristics are not considered defects; they are the signature of authentic, human-made goods.</p>
+                <p>Product images on our site are for illustrative purposes. While we strive to display colors and details as accurately as possible, actual products may vary slightly due to photography lighting, screen differences, and the handmade nature of the items. We recommend reading product descriptions thoroughly before purchasing.</p>
+                <div class="highlight-box">
+                    <i class="fas fa-palette" style="margin-right: 12px; color:#8b5e3c;"></i>
+                    <strong>Handcrafted promise:</strong> Each ceramic bowl, each handwoven cushion, carries subtle individuality — making your piece truly one of a kind.
+                </div>
+            </div>
+
+            <div class="disclaimer-section">
+                <h2>External Links & Third-Party Content</h2>
+                <p>Through this website, you may be able to link to other websites or resources that are not under the control of CART-PALACE. We have no control over the nature, content, and availability of those external sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them. We are not responsible for any loss or damage that may arise from your use of third-party websites.</p>
+                <p>We may feature guest contributors or interviews with artisans, but the views and opinions expressed in such content belong solely to the authors and do not necessarily reflect our official policy or position.</p>
+            </div>
+
+            <div class="disclaimer-section">
+                <h2>No Professional Advice</h2>
+                <p>The content on this website is not intended to be a substitute for professional advice — whether legal, financial, medical, or interior design consulting. You should not act or refrain from acting based on any information on this website without seeking appropriate professional counsel tailored to your specific situation.</p>
+                <p>If you have specific questions about product use, care instructions, or material safety, please contact us directly for guidance. We do not assume liability for any adverse reactions, damage, or misuse of our products.</p>
+            </div>
+
+            <div class="disclaimer-section">
+                <h2>Limitation of Liability</h2>
+                <p>To the fullest extent permitted by applicable law, CART-PALACE, its employees, partners, suppliers, or affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your use or inability to use the website; (ii) any unauthorized access to or use of our servers and/or any personal information stored therein; (iii) any bugs, viruses, or the like that may be transmitted to or through our website by any third party.</p>
+                <p>We do not warrant that the website will be uninterrupted, secure, or error-free, nor that any defects will be corrected.</p>
+            </div>
+
+            <div class="disclaimer-section">
+                <h2>“As Is” & “As Available” Basis</h2>
+                <p>All products and services delivered by CART-PALACE are provided on an "as is" and "as available" basis, unless otherwise specified in writing. We reserve the right to modify, suspend, or discontinue any product, promotion, or feature without prior notice. We do not guarantee that product availability, pricing, or stock levels are always accurate, though we make every effort to update inventory in real time.</p>
+            </div>
+
+            <div class="disclaimer-section">
+                <h2>Changes to This Disclaimer</h2>
+                <p>CART-PALACE may update this Disclaimer from time to time to reflect changes in our practices, legal requirements, or operational needs. When we update the page, the "Last Updated" date at the top of this Disclaimer will be revised. We encourage you to periodically review this page to stay informed about how we manage disclaimers and limitations of liability. Your continued use of the website after any changes constitutes acceptance of the updated terms.</p>
+            </div>
+
+            <div class="disclaimer-section">
+                <h2>Contact Us</h2>
+                <p>If you have any questions, concerns, or requests regarding this Disclaimer or any of our practices, please feel free to reach out to our support team:</p>
+                <ul>
+                    <li><i class="far fa-envelope" style="margin-right: 8px; color:#8b5e3c;"></i> Email: legal@CART-PALACE.com</li>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 8px; color:#8b5e3c;"></i> Address: 43 Crafters Lane, Portland, ME 04101, USA</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to CART-PALACE Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+    </div>
+    <p style="font-size: 0.8rem;">&copy; 2025 CART-PALACE — where everyday objects tell stories.</p>
+</footer>
+
+</body>
+</html>
